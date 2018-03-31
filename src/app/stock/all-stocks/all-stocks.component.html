@@ -1,0 +1,64 @@
+<div class="container">
+    ID :
+    <input type="text" #stockId>
+    <button type="button" class="btn btn-danger" (click)="searchStock(stockId.value)">Search</button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Stocks</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+<button type="button" class="btn btn-primary" (click)="redirectNewStockPage()">New Stock</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Stock Name</th>
+            <th>Current Price</th>
+            <th>Highest Price</th>
+            <th>Lowest Price</th>
+            <th>Face Value</th>
+            <th>Book Value</th>
+            <th>Last Updated</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let stock of stocks">
+            <th scope="row">{{stock.id}}</th>
+            <td>{{stock.name}}</td>
+            <td>{{stock.currentPrice}}</td>
+            <td>{{stock.highPrice}}</td>
+            <td>{{stock.lowPrice}}</td>
+            <td>{{stock.faceValue}}</td>
+            <td>{{stock.bookValue}}</td>
+            <td>{{stock.lastUpdate}}</td>
+            <td>
+             <button type="button" class="btn btn-success" (click)="editStockPage(stock)">Edit</button>
+             <button type="button" class="btn btn-danger" (click)="deleteStock(stock)">Delete</button>
+           </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

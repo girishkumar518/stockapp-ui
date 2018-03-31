@@ -1,0 +1,36 @@
+<form >
+    Add New Stock
+
+    <table class="table" >
+      <tbody>
+      <tr>
+        <th>Stock Name</th>
+        <td><input mdInput placeholder="Name"   [(ngModel)]="newStock.name" name="name" /></td>
+        </tr>
+        <tr>
+          <th>Current Price</th>
+          <td><input mdInput placeholder="Current Price"  name="currentPrice"  [(ngModel)]="newStock.currentPrice" /></td>
+          </tr>
+          <tr>
+            <th>Face Value</th>
+            <td><input mdInput placeholder="Face Value"  name="faceValue"  [(ngModel)]="newStock.faceValue" /></td>
+            </tr>
+            <tr>
+              <th>Book Value</th>
+              <td><input mdInput placeholder="Book Value" name="bookValue"  [(ngModel)]="newStock.bookValue" /></td>
+              </tr>
+
+              <tr>
+<td>  <button type="button"
+               class="btn btn-primary"
+               (click)="createStock()">CREATE</button></td>
+               <td>  <button type="button"
+                              class="btn btn-danger"
+                              (click)="goBack()">GO BACK</button></td>
+              </tr>
+
+      </tbody>
+    </table>
+
+
+   </form>

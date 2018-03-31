@@ -1,0 +1,67 @@
+<div class="container">
+    ID :
+    <input type="text" #stockId>
+    <button type="button" class="btn btn-danger" (click)="searchRedirectStock(stockId.value)">Search</button>
+    <button type="button" class="btn btn-danger" (click)="listStock()">List All Stocks</button>
+</div>
+
+<div class="container" >
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Stocks</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+<button type="button" class="btn btn-primary" (click)="redirectNewStockPage()">New Stock</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+<div *ngIf="stock">
+        <table class="table" >
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Stock Name</th>
+            <th>Current Price</th>
+            <th>Highest Price</th>
+            <th>Lowest Price</th>
+            <th>Face Value</th>
+            <th>Book Value</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr >
+            <td>{{stock?.id}}</td>
+            <td><input [(ngModel)]="stock.name" placeholder="name" ></td>
+            <td><input [(ngModel)]="stock.currentPrice" placeholder="currentPrice" ></td>
+            <td>{{stock?.highPrice}}</td>
+            <td>{{stock?.lowPrice}}</td>
+            <td><input [(ngModel)]="stock.faceValue" placeholder="faceValue" ></td>
+            <td><input [(ngModel)]="stock.bookValue" placeholder="bookValue" ></td>
+            <td>
+             <button type="button" class="btn btn-danger" (click)="updateStock(stock)">Update</button>
+           </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+<div *ngIf="!stock">
+   No Stocks Available
+</div>
+
+      </section>
+    </div>
+  </div>
+</div>
